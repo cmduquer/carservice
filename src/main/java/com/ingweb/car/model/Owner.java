@@ -14,7 +14,7 @@ import lombok.NonNull;
 public class Owner {
 	@Id @GeneratedValue
     private Long id;
-	private int dni;
+	private String dni;
 	private String profession;
     private @NonNull String name;
 

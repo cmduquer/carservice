@@ -28,10 +28,6 @@ public class CarServiceApplication {
                 car.setName(name);
                 repository.save(car);
             });
-            Owner owner = new Owner();
-            owner.setDni(1037582890);
-            owner.setName("Carlos Mauricio Duque Restrepo");
-            owner.setProfession("Software Engineer");
             
             repository.findAll().forEach(System.out::println);
         };
@@ -41,7 +37,7 @@ public class CarServiceApplication {
     ApplicationRunner init2(OwnerRepository repository) {
         return args -> {
             Owner owner = new Owner();
-            owner.setDni(1037582890);
+            owner.setDni("1037582890");
             owner.setName("Carlos Mauricio Duque Restrepo");
             owner.setProfession("Software Engineer");
             repository.save(owner);

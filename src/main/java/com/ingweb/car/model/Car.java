@@ -15,5 +15,5 @@ public class Car {
 	@Id @GeneratedValue
     private Long id;
     private @NonNull String name;
-    private int ownerDni;
+    private String ownerDni;
 }
