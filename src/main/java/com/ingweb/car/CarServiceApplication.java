@@ -8,7 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import com.ingweb.car.model.Car;
+import com.ingweb.car.model.Owner;
 import com.ingweb.car.repository.CarRepository;
+import com.ingweb.car.repository.OwnerRepository;
 
 @SpringBootApplication
 public class CarServiceApplication {
@@ -26,6 +28,23 @@ public class CarServiceApplication {
                 car.setName(name);
                 repository.save(car);
             });
+            Owner owner = new Owner();
+            owner.setDni(1037582890);
+            owner.setName("Carlos Mauricio Duque Restrepo");
+            owner.setProfession("Software Engineer");
+            
+            repository.findAll().forEach(System.out::println);
+        };
+    }
+	
+	@Bean
+    ApplicationRunner init2(OwnerRepository repository) {
+        return args -> {
+            Owner owner = new Owner();
+            owner.setDni(1037582890);
+            owner.setName("Carlos Mauricio Duque Restrepo");
+            owner.setProfession("Software Engineer");
+            repository.save(owner);
             repository.findAll().forEach(System.out::println);
         };
     }
