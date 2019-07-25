@@ -22,7 +22,7 @@ public class OwnerController {
 	
 	@GetMapping("/owner")
     @CrossOrigin(origins = "http://localhost:4200")
-    public List<Owner> owner(@RequestParam int dni) {
+    public List<Owner> owner(@RequestParam String dni) {
         return repository.findByDni(dni);
     }
 
