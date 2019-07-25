@@ -10,6 +10,6 @@ import com.ingweb.car.model.Owner;
 @CrossOrigin(origins = "http://localhost:4200")
 public interface OwnerRepository extends JpaRepository<Owner, Long> {
 	
-	List<Owner> findByDni(int dni);
+	List<Owner> findByDni(String dni);
 
 }
